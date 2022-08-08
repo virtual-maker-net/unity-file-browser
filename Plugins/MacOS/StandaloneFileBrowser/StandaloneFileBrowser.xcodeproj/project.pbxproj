@@ -111,6 +111,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -203,7 +204,7 @@
 				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gkngkc.sfb;
 				PRODUCT_NAME = StandaloneFileBrowser;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -228,7 +229,7 @@
 				PREBINDING = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gkngkc.sfb;
 				PRODUCT_NAME = StandaloneFileBrowser;
-				VALID_ARCHS = x86_64;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				WRAPPER_EXTENSION = bundle;
 				ZERO_LINK = NO;
 			};
