@@ -7,7 +7,8 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "Ookii.Dialogs.dll"
+        "Ookii.Dialogs.dll",
+        "System.Windows.Forms.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
