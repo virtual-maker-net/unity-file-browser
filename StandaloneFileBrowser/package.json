@@ -1,0 +1,9 @@
+{
+    "displayName": "StandaloneFileBrowser",
+    "description": "Native open and save UIs for Windows, MacOS, Linux, WebGL",
+    "name": "com.virtualmaker.filebrowser",
+    "unity": "2019.4",
+    "version": "1.0.0",
+    "category": "utilities",
+    "dependencies": {}
+}
