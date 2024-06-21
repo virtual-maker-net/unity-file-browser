@@ -54,17 +54,6 @@ var StandaloneFileBrowserWebGLPlugin = {
         }
     },
 
-    // Save file
-    // DownloadFile method does not open SaveFileDialog like standalone builds, its just allows user to download file
-    // gameObjectNamePtr: Unique GameObject name. Required for calling back unity with SendMessage.
-    // methodNamePtr: Callback method name on given GameObject.
-    // filenamePtr: Filename with extension
-    // byteArray: byte[]
-    // byteArraySize: byte[].Length
-    DownloadFile: function(gameObjectNamePtr, methodNamePtr, filenamePtr, byteArray, byteArraySize) {
-        DownloadFileSpan(gameObjectNamePtr, methodNamePtr, filenamePtr, byteArray, 0, byteArraySize);
-    },
-
     // Save file from span of bytes
     // DownloadFile method does not open SaveFileDialog like standalone builds, its just allows user to download file
     // gameObjectNamePtr: Unique GameObject name. Required for calling back unity with SendMessage.
@@ -96,6 +85,17 @@ var StandaloneFileBrowserWebGLPlugin = {
 
             SendMessage(gameObjectName, methodName);
         }
+    },
+    
+    // Save file
+    // DownloadFile method does not open SaveFileDialog like standalone builds, its just allows user to download file
+    // gameObjectNamePtr: Unique GameObject name. Required for calling back unity with SendMessage.
+    // methodNamePtr: Callback method name on given GameObject.
+    // filenamePtr: Filename with extension
+    // byteArray: byte[]
+    // byteArraySize: byte[].Length
+    DownloadFile: function(gameObjectNamePtr, methodNamePtr, filenamePtr, byteArray, byteArraySize) {
+        this.DownloadFileSpan(gameObjectNamePtr, methodNamePtr, filenamePtr, byteArray, 0, byteArraySize);
     }
 };
 
