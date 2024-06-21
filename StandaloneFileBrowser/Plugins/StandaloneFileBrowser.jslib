@@ -62,29 +62,8 @@ var StandaloneFileBrowserWebGLPlugin = {
     // byteArray: byte[]
     // byteArraySize: byte[].Length
     DownloadFile: function(gameObjectNamePtr, methodNamePtr, filenamePtr, byteArray, byteArraySize) {
-        gameObjectName = UTF8ToString(gameObjectNamePtr);
-        methodName = UTF8ToString(methodNamePtr);
-        filename = UTF8ToString(filenamePtr);
-
-        var bytes = new Uint8Array(byteArraySize);
-        for (var i = 0; i < byteArraySize; i++) {
-            bytes[i] = HEAPU8[byteArray + i];
-        }
-
-        var downloader = window.document.createElement('a');
-        downloader.setAttribute('id', gameObjectName);
-        downloader.href = window.URL.createObjectURL(new Blob([bytes], { type: 'application/octet-stream' }));
-        downloader.download = filename;
-        document.body.appendChild(downloader);
-
-        document.onmouseup = function() {
-            downloader.click();
-            document.body.removeChild(downloader);
-        	document.onmouseup = null;
-
-            SendMessage(gameObjectName, methodName);
-        }
-    }
+        DownloadFileSpan(gameObjectNamePtr, methodNamePtr, filenamePtr, byteArray, 0, byteArraySize);
+    },
 
     // Save file from span of bytes
     // DownloadFile method does not open SaveFileDialog like standalone builds, its just allows user to download file
